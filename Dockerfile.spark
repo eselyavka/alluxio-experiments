@@ -1,0 +1,5 @@
+FROM apache/spark
+
+# Copy additional jar files to the container
+COPY alluxio-2.9.3-hadoop2-client.jar /opt/spark/jars/alluxio-2.9.3-client.jar
+COPY gcs-connector-hadoop2-latest.jar /opt/spark/jars/gcs-connector-hadoop2-latest.jar
