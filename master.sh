@@ -20,7 +20,7 @@ docker run -d --rm \
     -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
     -v "/Users/${USER}/projects/alluxio-experiments/journal1":/opt/alluxio/journal \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
-    --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxio_setup.sh",target=/tmp/alluxio_setup.sh,readonly \
+    --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxion_bootstrap.sh",target=/tmp/alluxio_setup.sh,readonly \
     alluxio/alluxio master --no-format
 
 docker run -d --rm \
@@ -41,7 +41,7 @@ docker run -d --rm \
     -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
     -v "/Users/${USER}/projects/alluxio-experiments/journal2":/opt/alluxio/journal \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
-    --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxio_setup.sh",target=/tmp/alluxio_setup.sh,readonly \
+    --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxion_bootstrap.sh",target=/tmp/alluxio_setup.sh,readonly \
     alluxio/alluxio master --no-format
 
 docker run -d --rm \
@@ -62,5 +62,5 @@ docker run -d --rm \
     -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
     -v "/Users/${USER}/projects/alluxio-experiments/journal3":/opt/alluxio/journal \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
-    --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxio_setup.sh",target=/tmp/alluxio_setup.sh,readonly \
+    --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxion_bootstrap.sh",target=/tmp/alluxio_setup.sh,readonly \
     alluxio/alluxio master --no-format

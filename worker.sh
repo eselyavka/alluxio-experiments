@@ -21,5 +21,5 @@ docker run -d --rm \
        -Dalluxio.master.security.impersonation.spark.users=*" \
     -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
-    --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxio_setup.sh",target=/tmp/alluxio_setup.sh,readonly \
+    --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxion_bootstrap.sh",target=/tmp/alluxio_setup.sh,readonly \
     alluxio/alluxio worker --no-format
