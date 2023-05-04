@@ -17,10 +17,10 @@ docker run -d --rm \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master2=alluxio-master-2:19998 \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master3=alluxio-master-3:19998 \
         -Dalluxio.master.security.impersonation.spark.users=*" \
-    -v "/Users/${USER}/projects/terraform/alluxio/data":/opt/alluxio/underFSStorage \
-    -v "/Users/${USER}/projects/terraform/alluxio/journal1":/opt/alluxio/journal \
+    -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
+    -v "/Users/${USER}/projects/alluxio-experiments/journal1":/opt/alluxio/journal \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
-    --mount type=bind,source="/Users/${USER}/projects/terraform/alluxio/alluxio_setup.sh",target=/tmp/alluxio_setup.sh,readonly \
+    --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxio_setup.sh",target=/tmp/alluxio_setup.sh,readonly \
     alluxio/alluxio master --no-format
 
 docker run -d --rm \
@@ -38,10 +38,10 @@ docker run -d --rm \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master2=alluxio-master-2:19998 \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master3=alluxio-master-3:19998 \
         -Dalluxio.master.security.impersonation.spark.users=*" \
-    -v "/Users/${USER}/projects/terraform/alluxio/data":/opt/alluxio/underFSStorage \
-    -v "/Users/${USER}/projects/terraform/alluxio/journal2":/opt/alluxio/journal \
+    -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
+    -v "/Users/${USER}/projects/alluxio-experiments/journal2":/opt/alluxio/journal \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
-    --mount type=bind,source="/Users/${USER}/projects/terraform/alluxio/alluxio_setup.sh",target=/tmp/alluxio_setup.sh,readonly \
+    --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxio_setup.sh",target=/tmp/alluxio_setup.sh,readonly \
     alluxio/alluxio master --no-format
 
 docker run -d --rm \
@@ -59,8 +59,8 @@ docker run -d --rm \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master2=alluxio-master-2:19998 \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master3=alluxio-master-3:19998 \
         -Dalluxio.master.security.impersonation.spark.users=*" \
-    -v "/Users/${USER}/projects/terraform/alluxio/data":/opt/alluxio/underFSStorage \
-    -v "/Users/${USER}/projects/terraform/alluxio/journal3":/opt/alluxio/journal \
+    -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
+    -v "/Users/${USER}/projects/alluxio-experiments/journal3":/opt/alluxio/journal \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
-    --mount type=bind,source="/Users/${USER}/projects/terraform/alluxio/alluxio_setup.sh",target=/tmp/alluxio_setup.sh,readonly \
+    --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxio_setup.sh",target=/tmp/alluxio_setup.sh,readonly \
     alluxio/alluxio master --no-format
