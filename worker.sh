@@ -19,6 +19,7 @@ docker run -d --rm \
        -Dalluxio.master.rpc.address.docker-alluxio-cluster.master3=alluxio-master-3:19998 \
        -Dalluxio.worker.hostname=alluxio-worker \
        -Dalluxio.master.security.impersonation.spark.users=*" \
+    -e ALLUXIO_WORKER_JAVA_OPTS="-Xms3g -Xmx3g" \
     -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
     --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxion_bootstrap.sh",target=/tmp/alluxio_setup.sh,readonly \

@@ -17,6 +17,7 @@ docker run -d --rm \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master2=alluxio-master-2:19998 \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master3=alluxio-master-3:19998 \
         -Dalluxio.master.security.impersonation.spark.users=*" \
+    -e ALLUXIO_MASTER_JAVA_OPTS="-Xms3g -Xmx3g" \
     -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
     -v "/Users/${USER}/projects/alluxio-experiments/journal1":/opt/alluxio/journal \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
@@ -38,6 +39,7 @@ docker run -d --rm \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master2=alluxio-master-2:19998 \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master3=alluxio-master-3:19998 \
         -Dalluxio.master.security.impersonation.spark.users=*" \
+    -e ALLUXIO_MASTER_JAVA_OPTS="-Xms3g -Xmx3g" \
     -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
     -v "/Users/${USER}/projects/alluxio-experiments/journal2":/opt/alluxio/journal \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
@@ -59,6 +61,7 @@ docker run -d --rm \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master2=alluxio-master-2:19998 \
         -Dalluxio.master.rpc.address.docker-alluxio-cluster.master3=alluxio-master-3:19998 \
         -Dalluxio.master.security.impersonation.spark.users=*" \
+    -e ALLUXIO_MASTER_JAVA_OPTS="-Xms3g -Xmx3g" \
     -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
     -v "/Users/${USER}/projects/alluxio-experiments/journal3":/opt/alluxio/journal \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
