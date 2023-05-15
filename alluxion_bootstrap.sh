@@ -11,6 +11,9 @@ alluxio fs mount --option fs.gcs.credential.path=/tmp/alluxio-dev.json /gcs/stor
 
 # Set permissions to GCS mounts
 for i in {0..2}; do
+  # access file in GCS, in order to update cache
+  alluxio fs ls "/gcs/storage${i}/data${i}/population/input.csv"
+
   alluxio fs setfacl -m "user:spark:r-x" "/gcs/storage${i}"
   alluxio fs setfacl -m "user:spark:r-x" "/gcs/storage${i}/data${i}"
   alluxio fs setfacl -m "user:spark:r-x" "/gcs/storage${i}/data${i}/population"
