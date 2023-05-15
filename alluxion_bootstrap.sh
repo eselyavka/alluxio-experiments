@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -Ce
+set -Cvex
 
 # Bootstrap GCS mounts
 alluxio fs test -d /gcs || alluxio fs mkdir /gcs
