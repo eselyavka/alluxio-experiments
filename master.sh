@@ -17,6 +17,7 @@ if [[ "$1" == "ha" ]] ; then
             -Dalluxio.master.rpc.address.docker-alluxio-cluster.master1=alluxio-master-1:19998 \
             -Dalluxio.master.rpc.address.docker-alluxio-cluster.master2=alluxio-master-2:19998 \
             -Dalluxio.master.rpc.address.docker-alluxio-cluster.master3=alluxio-master-3:19998 \
+            -Dalluxio.user.metrics.heartbeat.interval.ms=20sec \
             -Dalluxio.master.security.impersonation.spark.users=*" \
         -e ALLUXIO_MASTER_JAVA_OPTS="-Xms3g -Xmx3g" \
         -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
@@ -39,6 +40,7 @@ if [[ "$1" == "ha" ]] ; then
             -Dalluxio.master.rpc.address.docker-alluxio-cluster.master1=alluxio-master-1:19998 \
             -Dalluxio.master.rpc.address.docker-alluxio-cluster.master2=alluxio-master-2:19998 \
             -Dalluxio.master.rpc.address.docker-alluxio-cluster.master3=alluxio-master-3:19998 \
+            -Dalluxio.user.metrics.heartbeat.interval.ms=20sec \
             -Dalluxio.master.security.impersonation.spark.users=*" \
         -e ALLUXIO_MASTER_JAVA_OPTS="-Xms3g -Xmx3g" \
         -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
@@ -61,6 +63,7 @@ if [[ "$1" == "ha" ]] ; then
             -Dalluxio.master.rpc.address.docker-alluxio-cluster.master1=alluxio-master-1:19998 \
             -Dalluxio.master.rpc.address.docker-alluxio-cluster.master2=alluxio-master-2:19998 \
             -Dalluxio.master.rpc.address.docker-alluxio-cluster.master3=alluxio-master-3:19998 \
+            -Dalluxio.user.metrics.heartbeat.interval.ms=20sec \
             -Dalluxio.master.security.impersonation.spark.users=*" \
         -e ALLUXIO_MASTER_JAVA_OPTS="-Xms3g -Xmx3g" \
         -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
@@ -78,11 +81,12 @@ else
         -Dalluxio.master.mount.table.root.ufs=/opt/alluxio/underFSStorage \
         -Dalluxio.master.hostname=alluxio-master \
         -Dalluxio.master.backup.directory=/opt/alluxio/metadata_backups \
+        -Dalluxio.user.metrics.heartbeat.interval.ms=20sec \
         -Dalluxio.master.security.impersonation.spark.users=*" \
     -e ALLUXIO_MASTER_JAVA_OPTS="-Xms3g -Xmx3g" \
     -v "/Users/${USER}/projects/alluxio-experiments/data":/opt/alluxio/underFSStorage \
     -v "/Users/${USER}/projects/alluxio-experiments/journal":/opt/alluxio/journal \
     --mount type=bind,source="/Users/${USER}/projects/cloud/gcp/iam/alluxio-dev.json",target=/tmp/alluxio-dev.json,readonly \
     --mount type=bind,source="/Users/${USER}/projects/alluxio-experiments/alluxion_bootstrap.sh",target=/tmp/alluxio_setup.sh,readonly \
-    alluxio/alluxio master --no-format
+    alluxio/alluxio master-only --no-format
 fi
